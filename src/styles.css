@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	margin:0;
+  font-size:12px;
+  font-family: 'Roboto', sans-serif;
+
+}
+input{
+  font-size:12px;
+  color:red;
+
+}
+.mat-toolbar{
+	background-color: #7f231f; 
+	color:white
+}
+/*
+color verde oscuro: #085a78
+color verde claro : #074E68
+*/
+
+.espacio{
+  width:2px; background:url(assets/img/space.jpg); height:50px; display:block; margin-right:20px
+}
+.cdk-global-overlay-wrapper>.cdk-overlay-pane{
+	width:100%!important;
+	max-width:100%!important;
+	position:absolute!important;
+	bottom:0!important;
+	
+}
+.mat-form-field-infix{
+  padding:0!important;
+}
+.mat-form-field-label{
+  color:white!important; top:2em!important;
+  font-weight:normal!important; font-size:12px!important
+}
+.mat-form-field-underline{background-color:white!important}
+
+.mat-option{font-size:12px!important}
+.mat-form-field-ripple{background-color: yellow!important;}
+.mat-select-value-text{color:white!important; font-size:12px!important}
+.mat-select-arrow{color:white!important}
+
+/* Animacion */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}

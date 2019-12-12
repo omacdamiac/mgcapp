@@ -1,0 +1,21 @@
+<mat-toolbar>
+<span><img src="../../assets/img/logo.png" alt="" />
+</span>
+<span class="space"></span>
+	<span><a href="app.html">[ App ]</a> </span>
+	<span> <a href="#">[ Nosotros ]</a> </span>
+	<span> <a href="#">[ Promociones ]</a> </span>
+
+<app-dialog-locales [combo]="categorias" [master]="jsonMaster" [pin]="markers" ></app-dialog-locales>
+<span class="espacio"></span>
+
+<mat-form-field>
+<mat-select placeholder="Tipo de local" [(ngModel)]="selectedValue" (change)="lanzar($event)">
+<mat-option>Selecione</mat-option>
+<mat-option selected value="Activado">Todos</mat-option>
+<mat-option *ngFor="let c of categorias" [value]="c.local" (selected)="selected($event)">
+{{ c.local }}
+</mat-option>
+</mat-select>
+</mat-form-field>
+</mat-toolbar>

@@ -1,0 +1,6 @@
+.space {
+  flex: 1 1 auto!important;
+}
+
+span>a{text-decoration:none;font-family: 'Roboto', sans-serif;color:white; font-size:12px; margin-right:20px; font-weight:normal}
+span>a:hover{color:yellow}

@@ -1,0 +1,8 @@
+{
+	"categorias":[
+		{"id":0,"local":"Bodega", "tipo":"B"},
+		{"id":1,"local":"Panaderia", "tipo":"P"},
+		{"id":2,"local":"Licoreria", "tipo":"Li"},
+		{"id":3,"local":"Librería", "tipo":"L"}
+	]
+}

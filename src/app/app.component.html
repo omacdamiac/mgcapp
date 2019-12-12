@@ -1,0 +1,79 @@
+
+<!-- Mostrar combo -->
+<div class="navbar">
+<div class="container">
+<app-main [texto]="title" [combo]="categorias" [pin]="markers" [master]="jsonMaster" (PasameElPueblo)="mostrar($event)"></app-main>
+</div>
+</div>
+
+<!--    <pre>{{ this.selectedValue }}</pre>
+<pre>{{ this.markers | json }}</pre> -->
+ 
+<app-promo>
+</app-promo>
+<!-- end Local -->
+ <!--  Mostrar mapa -->
+<agm-map
+  id = "marcadorMapa" 
+[latitude]="lat" 
+[longitude]="lng" 
+[zoom] = "zoom" 
+[disableDefaultUI] = "false" 
+[zoomControl] = "true" 
+
+(mapClick)="mapCliqueado($event)">
+	<!-- Marcador -->
+  <agm-marker 
+  *ngFor ="let m of markers; let i = index" 
+  (markerClick)="marcadorCliqueado(m,i)" 
+  [latitude]="m.lat" 
+  [longitude]="m.lng" 
+  estado="m.state" 
+  [markerDraggable]="m.drag" 
+  [label]="m.tipo" 
+  [iconUrl]="m.icon"
+  (dragEnd)="posicionFinalMarcador(m, $event)">
+
+	<agm-info-window>
+	<strong>{{ m.nombre }}</strong>
+	<p>{{ m.label }}</p>
+	</agm-info-window>
+</agm-marker>
+
+</agm-map>
+ <!--  end Mostrar mapa -->
+
+	<!-- Formulario -->
+<!-- 	<div class="formAdd">
+		<form (submit)="agregarMarcador(sebm-google-map)">
+  <mat-form-field>
+    <input matInput placeholder="Nombre">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Apellido">
+  </mat-form-field>
+
+
+
+			 <div class="input-field col s6">
+              <input class="validate" id="last_name" type="text">
+              <label for="last_name" class="">Last Name</label>
+            </div>
+			<label for="nombre" *ngFor="let tienda of _is.info.tiendas">{{ tienda.name }} </label>
+			<input type="text" [(ngModel)]="nombreMarcador" name="nombreMarcador">
+
+			<label for="latMarcador">Latitud</label>
+			<input type="text" [(ngModel)]="latMarcador" name="latMarcador">
+
+			<label for="lngMarcador">Longitud</label>
+			<input type="text" [(ngModel)]="lngMarcador" name="lngMarcador">
+
+			<label for="nombre">Arrastrable</label>
+			<select [(ngModel)]="marcadorArrastrable" name="marcadorArrastrable" style="display:inline"><option> - </option><option value="si">Si</option><option value="no">No</option></select>
+			    <button mat-raised-button (click)="openDialog()">Abrir Modal</button>
+			<input style="display:inline" type="submit" class="btn" value="Enviar">
+			<br><br>
+		</form>
+	</div> -->
+		<!-- Formulario -->
+

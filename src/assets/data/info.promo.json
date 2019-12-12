@@ -1,0 +1,7 @@
+{
+	"promociones":[
+		{"id":0,"local":"Las lomas grill", "tipo":"Restaurante", "direccion":"Av. Las lomas #1000 - Mangomarca
+" , "img_promo":"../../assets/img/pisco.jpg"}
+
+	]
+}

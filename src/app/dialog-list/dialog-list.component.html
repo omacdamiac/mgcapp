@@ -1,0 +1,54 @@
+<div class="tiendas">
+<h2 mat-dialog-title>
+Locales = {{jsonMaster | json}}
+</h2>
+<hr>
+<div style="height:400px;overflow:scroll;display:block">
+<mat-dialog-content *ngFor ="let m of data.nombre; let i = index" >
+<!-- Local -->
+<div style="display:inline-block">
+<img src="{{m.imagen}}" width="128" alt="" style="border-radius:8px;">
+</div>
+<div style="display:inline-block; padding:10px; box-sizing:border-box">
+<h2 style="margin-bottom:0px; margin-top:10px">{{m.nombre}}
+</h2>
+<div style="display:inline-block;">
+<h5 style="margin:0px; display:inline-block">{{m.label}} | </h5>
+<div *ngIf="m.pago" class="iconoLocal">
+<img src="https://parrotteleprompter.com/sites/default/files/visa.gif" style="width:24px" matTooltipPosition="above" matTooltip="Acepta visa" >
+</div>
+<div *ngIf="m.delivery" class="iconoLocal">
+<img src="https://www.lekkerbikes.com.au/wp-content/uploads/2016/05/Delivery-Icon.png" matTooltipPosition="above" matTooltip="Mínimo 15 S/." style="width:24px; margin-bottom:-6px">
+</div>
+<div *ngIf="m.wifi" class="iconoLocal">
+<img src="http://www.icon2s.com/img128/128x128-black-white-metro-wifi-icon.png"  matTooltipPosition="above" matTooltip="WIFI"   style="width:16px">
+</div>
+<div *ngIf="m.web" class="iconoLocal">
+<a target="_blank" href="{{m.urlweb}}"><img src="https://image.flaticon.com/icons/png/128/117/117965.png"  matTooltipPosition="above" matTooltip="Web"  style="width:16px"></a>
+</div>
+<div class="iconoLocal">
+<a href=""><img src="{{m.pin}}"  matTooltipPosition="above" matTooltip="Ubicar"  style="width:16px"></a>
+</div>
+</div>
+<br>
+<span style="font-size:10px">{{m.direccion}}</span>
+<p style="font-size:12px; margin-top:5px"><strong>Horario: </strong >{{m.abre}} - {{m.cierra}}<span style="color:#e4da00">★★</span>
+<span style="font-size:8px;color:green;letter-spacing:1px" *ngIf="m.cierra < this.hora || m.abre > this.hora">( ABIERTO ) </span>
+<span style="font-size:8px;color:red; etter-spacing:1px" *ngIf="m.cierra < this.hora || m.abre > this.hora">( CERRADO ) </span>
+</p>
+<div style="display:inline-block" *ngFor="let s of data.nombre; let n = index">
+		<img *ngIf="s.star <= m.star" src="{{s.icon_star}}" alt="">
+</div>
+</div>
+<hr>
+<div class="clear"></div>
+<!-- Local -->
+<!-- <strong>{{data}}</strong>
+ --></mat-dialog-content></div>
+<hr>
+<mat-dialog-actions>
+<button mat-raised-button (click)="onCloseConfirm()">Confirm</button>
+<button mat-raised-button (click)="onCloseCancel()">Cancel</button>
+</mat-dialog-actions>
+
+</div>
